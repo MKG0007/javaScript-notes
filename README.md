@@ -3,7 +3,7 @@
 
 
 ## API fetching
-###old ways of API fetching: XLMhttpRequest
+### old ways of API fetching: XLMhttpRequest
 
 Value	State	Description
 0	UNSENT	Client has been created. open() not called yet.
