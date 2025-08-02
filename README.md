@@ -28,3 +28,15 @@ it is the method --->
         }
     }
     xhr.send();
+
+```
+## Note:- 
+to use the api fetch data we can define it variable out side the state handler and intiallized in it when the data sucessufully fetched 
+state handler like **onreadyStateChange** , **onload**
+
+---
+
+# promise:-
+in simple words , as we know that js is single threaded language and due to brower features it behaves like a asynchrous manner
+so, in most of the task can't be exicuted right after the reaquest because of that we use promise to assure the completion of the task.
+
