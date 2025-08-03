@@ -225,7 +225,115 @@ that's why javaScript considered to be follow a prototype based inheritance
 every thing in js is object and all objects have all the properties that other object in the js have 
 so , if we try then function can work as a object and as a normal function both at the same.
 
-### states of promise
+
+```javascript
+function multipleBy5(num){
+
+    return num*5
+}
+
+multipleBy5.power = 2
+
+console.log(multipleBy5(5));
+console.log(multipleBy5.power);
+console.log(multipleBy5.prototype);
+```
+
+---
+
+```javascript
+function createUser(username, score){
+    this.username = username
+    this.score = score
+}//its just a normal funtiom
+//but we know --> it will also have the properties of an object
+and we can add our own property into the function.prototype folder
+
+createUser.prototype.increment = function(){//here is one custum method
+    this.score++
+}
+createUser.prototype.printMe = function(){//her is second custum method
+    console.log(`price is ${this.score}`);
+}
+
+const chai = new createUser("chai", 25)
+const tea = createUser("tea", 250)
+//we can not use our custom function in case of tea because we didn't initiallized the change for it.
+//for this use "new" keyword to do that
+chai.printMe()//now we can call it
+// and because of the syntactic sugar of the js be don't have to do the object drilling to use the function
+
+```
+---
+
+###Here's what happens behind the scenes when the new keyword is used:
+
+A new object is created: The new keyword initiates the creation of a new JavaScript object.
+
+A prototype is linked: The newly created object gets linked to the prototype property of the constructor function. This means that it has access to properties and methods defined on the constructor's prototype.
+
+The constructor is called: The constructor function is called with the specified arguments and this is bound to the newly created object. If no explicit return value is specified from the constructor, JavaScript assumes this, the newly created object, to be the intended return value.
+
+The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
+
+
+---
+```javascript
+
+//old time's inheritence
+const User = {
+    name: "chai",
+    email: "chai@google.com"
+}
+
+const Teacher = {
+    makeVideo: true
+}
+
+const TeachingSupport = {
+    isAvailable: false
+}
+
+const TASupport = {
+    makeAssignment: 'JS assignment',
+    fullTime: true,
+    __proto__: TeachingSupport
+}
+
+Teacher.__proto__ = User
+
+// modern syntax
+Object.setPrototypeOf(TeachingSupport, Teacher)
+```
+
+---
+## call and this:-
+
+```javascript
+function SetUsername(username){
+    //complex DB calls
+    this.username = username
+    console.log("called");
+}
+
+function createUser(username, email, password){
+    SetUsername.call(this, username)
+//if simple call the setusername function --> it exicuted and get remove from the call stack but we need the changes that it done
+// so , we need the reference of that function
+// but only reference can't  make changes on the parent function
+
+// as every function have there own "this"--> so to get the changes we have to pass the parent "this" in outer function
+// by doing so , outer function use the parent function this and changes will heppens in that function in which the outer got called
+   
+    this.email = email
+    this.password = password
+}
+
+const chai = new createUser("chai", "chai@fb.com", "123")
+console.log(chai);
+```
+
+
 
 
 
