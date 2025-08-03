@@ -36,7 +36,81 @@ state handler like **onreadyStateChange** , **onload**
 
 ---
 
-# promise:-
+## promise:-
 in simple words , as we know that js is single threaded language and due to brower features it behaves like a asynchrous manner
 so, in most of the task can't be exicuted right after the reaquest because of that we use promise to assure the completion of the task.
+
+### promise creation --->
+```javascript
+const promiseOne = new Promise(function(resolve, reject){
+    //Do an async task
+    // DB calls, cryptography, network
+    setTimeout(function(){
+        console.log('Async task is compelete');
+        resolve()
+    }, 1000)
+})
+
+promiseOne.then(function(){
+    console.log("Promise consumed");
+})
+
+```
+we don't have to store the promise inside the variable
+```javascript
+new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log("Async task 2");
+        resolve()
+    }, 1000)
+
+}).then(function(){
+    console.log("Async 2 resolved");
+})
+
+```
+promise with 'then' , 'catch'-->
+```javascript
+const promiseFour = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true//to check the error if there any
+        if (!error) {
+            resolve({username: "hitesh", password: "123"})//value goes to "then"
+        } else {
+            reject('ERROR: Something went wrong')//handle by catch()
+        }
+    }, 1000)
+})
+
+ promiseFour
+ .then((user) => {
+    console.log(user);
+    return user.username
+}).then((username) => {//return data by next then
+    console.log(username);
+}).catch(function(error){
+    console.log(error);
+}).finally(() => console.log("The promise is either resolved or rejected"))//it gives the final verdict 
+
+```
+
+### states of promise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
