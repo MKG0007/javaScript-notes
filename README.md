@@ -333,6 +333,128 @@ const chai = new createUser("chai", "chai@fb.com", "123")
 console.log(chai);
 ```
 
+---
+
+### modern oops syntax of javascript
+-(syntactic sugar)
+
+```javascript
+class cName{
+    constructor(username , email , password){
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+    encryptPassword(){
+        return `${this.password}abc`;
+    }
+}
+
+const user1 = new cName("mayank" , "mkg@gmail.com" , "1234");
+console.log(chai.encryptPassword());
+
+// behind the scene
+
+function User(username, email, password){
+    this.username = username;
+    this.email = email;
+    this.password = password
+}
+
+User.prototype.encryptPassword = function(){
+    return `${this.password}abc`
+}
+User.prototype.changeUsername = function(){
+    return `${this.username.toUpperCase()}`
+}
+
+
+const tea = new User("tea", "tea@gmail.com", "123")
+
+console.log(tea.encryptPassword());
+console.log(tea.changeUsername());
+
+```
+
+## inheritance:-
+```javascript
+class User {
+    constructor(username){
+        this.username = username
+    }
+
+    logMe(){
+        console.log(`USERNAME is ${this.username}`);
+    }
+}
+
+class Teacher extends User{
+    constructor(username, email, password){
+        super(username)
+        this.email = email
+        this.password = password
+    }
+
+    addCourse(){
+        console.log(`A new course was added by ${this.username}`);
+    }
+}
+
+const chai = new Teacher("chai", "chai@teacher.com", "123")
+
+chai.logMe()
+const masalaChai = new User("masalaChai")
+
+masalaChai.logMe()
+
+console.log(chai instanceof User);
+
+```
+
+## static keyword:-
+it is used to stop the access of the methods and variables of class by its object and inheritend classes
+
+
+### bind :-
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
+
+```
+
+
+
+
 
 
 
