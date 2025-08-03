@@ -185,6 +185,9 @@ when we use fetch() method --> it requested in to parts:
 after getting into either one of them and got initiallized in data_variable--->finally response shown to the user
 
 ---
+## oops concept of javaScript:
+
+
 
 ### states of promise
 
