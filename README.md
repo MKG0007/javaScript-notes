@@ -185,9 +185,39 @@ when we use fetch() method --> it requested in to parts:
 after getting into either one of them and got initiallized in data_variable--->finally response shown to the user
 
 ---
-## oops concept of javaScript:
+## oops concept in javaScript:
+in reality , javascript is the prototpe based language and its classes are primarily syntactic sugar over the existing prototype-based inheritance mechanisms.
 
+**class:-** it is the blueprint or template for creating a object.  
 
+**object:-** it is the instance of class and it will have the data and behavior defined by the class.  
+
+in simple words , object is the collection of properties and methods/functions.  
+
+## new keyword and this importance:-
+**New Keyword**--> it is use to create a new instance of the object(copy of the object)  
+ **working--->**  
+copy object creation --> parameters are injected by the "this" keyword--> and then at the values return to the variable
+```javascript
+function user(username , logincount , age){
+    this.username = username ;//this--> it is used here to differenciate the function variable and its arguments.
+    this.logincount = logincount ;
+    this.age = age;
+}
+const u1 = user("mayank" , 10 , 20);
+const u2 = user("rohit" , 20 , 30);
+
+console.log(u1);
+conosle.log(u2);
+//as we didn't used new keyword--> values was override by the second calling with there parameters
+//to avoid that --> we use new keyword to make the saparate copy of the function
+const u3 = new user("mayank" , 10 , 20);
+const u4 =  new user("rohit" , 20 , 30);
+console.log(u3);
+conosle.log(u4);
+```
+---
+![](object.png)
 
 ### states of promise
 
