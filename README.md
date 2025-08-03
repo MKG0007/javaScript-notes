@@ -93,7 +93,70 @@ const promiseFour = new Promise(function(resolve, reject){
 }).finally(() => console.log("The promise is either resolved or rejected"))//it gives the final verdict 
 
 ```
+handling promise by using 'async' and 'await 
+```javascript
+const promiseFive = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true
+        if (!error) {
+            resolve({username: "javascript", password: "123"})
+        } else {
+            reject('ERROR: JS went wrong')
+        }
+    }, 1000)
+});//promise creation 
 
+async function consumePromiseFive(){//async function for handling promise responses
+    try {//as we also through reject and to handle it we have to use try catch inside the function
+        const response = await promiseFive
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+}
+consumePromiseFive();//async function calling
+```
+
+full working of async await and fetching the api in real time -->
+```javascript
+ async function getAllUsers(){
+     try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+
+        const data = await response.json()
+      console.log(data);
+    } catch (error) {
+         console.log("E: ", error);
+   }
+ }
+
+getAllUsers()
+```
+
+using fetch() with then and catch(modern way of API fetching)-->
+```javascript
+fetch('https://api.github.com/users/hiteshchoudhary')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => console.log(error))
+
+```
+## note-imp-> 
+in case of promise  , requesting something from a api and it gives the error code 404 then it will considered as a response.
+
+promise does not reject on http errors
+it will only rejects when a network and permission issue occure
+
+
+
+![](jsworking.png)
+
+
+![](fetchworking.png)
 ### states of promise
 
 
