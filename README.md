@@ -218,6 +218,12 @@ conosle.log(u4);
 ```
 ---
 ![](object.png)
+## node->
+prototype behaviour of javaScript--> even though the there is properties methods is exist but still js try to access the ojects parent and child until it gets a zero.  
+that's why javaScript considered to be follow a prototype based inheritance   
+
+every thing in js is object and all objects have all the properties that other object in the js have 
+so , if we try then function can work as a object and as a normal function both at the same.
 
 ### states of promise
 
