@@ -152,11 +152,40 @@ promise does not reject on http errors
 it will only rejects when a network and permission issue occure
 
 
+---
+![](jsWorking.png)
 
-![](jsworking.png)
+---
+### summary-->
+in javaScript , there are two types of memory :-
+1-heap Memory(where all got stored variable)
+2-callStack(where all un-exicuted function are stored for exicution)
 
+and this entired arrangmenet are called as js engine
+and when in any function we can call 
+DOM api
+setTimeout and setInterval----->there calls goes to "register call back ------->stored in the task queue(waiting for exicution)
 
-![](fetchworking.png)
+but in case of **fetch()** method ---> special queue was created which called a priority/micro task queue--->push the task in the call stack at top even before the "task queue"
+
+which causes the api exicution first even it written after functions
+that all is to it.
+
+---
+
+![](fetchWorking.png)
+
+---
+### summery-->
+when we use fetch() method --> it requested in to parts:
+1- web browser/node.js eviornment --->network request(responce or rejection)
+2- data:___(where response data going to store)
+-onfulfilled[]--->for response 
+-onRejection[]--->for reject
+after getting into either one of them and got initiallized in data_variable--->finally response shown to the user
+
+---
+
 ### states of promise
 
 
