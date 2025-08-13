@@ -1,4 +1,18 @@
 # javaScript-code
+**JavaScript** is a **programming language** that’s mainly used to make web pages interactive and dynamic.  
+
+**Client-side language:** Mostly runs in your web browser.
+
+### note:- 
+js run time environment uses **read evalute print loop**.
+js is case-sensitive.
+in js we don't have to declare the type of the variable.  
+**bug that never fixed** -->in old days ->type tag of object was 'zero'(null)->that why the 'null' type is **object**
+**NaN(not a number)**-->it represents invalid number in js  
+
+#### operator precedence->  
+(bracket) > (**) > (*/%) > (- +)
+
 ---
 
 
