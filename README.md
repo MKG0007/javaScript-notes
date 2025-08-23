@@ -1,19 +1,161 @@
 # javaScript-code
 **JavaScript** is a **programming language** that’s mainly used to make web pages interactive and dynamic.  
-
+It is one of the core technologies of the web along with HTML (structure) and CSS (styling)
 **Client-side language:** Mostly runs in your web browser.
 
-### note:- 
-js run time environment uses **read evalute print loop**.
-js is case-sensitive.
-in js we don't have to declare the type of the variable.  
-**bug that never fixed** -->in old days ->type tag of object was 'zero'(null)->that why the 'null' type is **object**
-**NaN(not a number)**-->it represents invalid number in js  
+## Template Literal in js-->  
+it is used to write veriable in string.
 
 #### operator precedence->  
 (bracket) > (**) > (*/%) > (- +)
+### note:- 
+->capital character is smaller when compare it by using comparision operator.  
+->js run time environment uses **read evalute print loop**.
+->js is case-sensitive.
+->in js we don't have to declare the type of the variable.  
 
+**bug that never fixed** -->in old days ->type tag of object was 'zero'(null)->that why the 'null' type is **object**
+**NaN(not a number)**-->it represents invalid number in js  
+
+
+
+## String in JavaScript--->
+it is the collection of characters of any length.
+
+
+### string mathods:-
+1)**trim()-->**remove the extra space form the starting and ending point of the string
+2)**toUpperCase()-->**ues to convert lower case into upper case 
+3)**toLowerCase()-->** use to convert upper string into lower case.  
+4)**indexOf() -->** return the first occurence index of the give string
+5)**slice(starting index , ending index(exnclusive))-->** to get the substring of the given string    
+6)**replace("oldstring" , "newstring")-->**use to replace search  the string inside the string and also replace the first occurence of that string with the newString
+
+
+## Array of the javaScript:-
+linear collection of datatype  
+### syntax--> let arr = [] ; 
+to find the size--> arrname.length  
+
+->array is mutable in the javaScript 
+push() , pop() , unshift() and shift()-->function of array to do operation  
+
+## methods of array->  
+1)includes()-->use to check that the given element is present in the array or not.  
+2)indexOf()--->return the index of the given element in the array.
+3)concat()--->use to merge two array  
+4)reverse()-->use to reverse the array  
+5)slice()--->return the subarray of the given array  
+6)splice(start index , no.Of element delete , items to add)--->use to delete and add the element in the array by using only single function  
+7)sort()--> only works for the array of strings because it convert the element into string if not and then sort it  
+So, due to this array is sorted with respect to string  
+
+
+### note:-  
+even if the two array contian the same values still they are not equal as the comparison not solly done only on the values it also consider the memory storage
+and that can't be same  if the array is different  
+
+if the array is declare as a constant which not mean that its elements is fixed -->vales can be change but the memory storage they array point on to can't be changed.  
+
+## types of array in javaScript  
+### nested array(array inside array)  
+```javascript
+let arr = [[1 , 2 , 3 , 4] , [5 , 6, 7, 8] , [2 , 6, 7 , 8]];
+let row = arr.length;
+let col = arr[0].length;
+
+a[0][0] = 1
+
+```
+### array of object(array containing element as a element) 
+```javascript
+        let arrr = [
+            {
+                name: "mayank",
+                age: 20
+            },
+            {
+                name: "ritik",
+                age: 20
+            },
+            {
+                name: "rohan",
+                age: 30
+            }
+        ]
+
+        for(let i = 0 ; i<arrr.length ; i++){
+            console.log(arrr[i].name);
+            console.log(arrr[i].age);
+        }
+        console.log(n3);
+
+```
+
+
+## object in Array  
+it is use to store collection of key-value pair  
+```javascript
+const obj = {
+     name: "mayank",
+     age: 20
+
+}
+console.log(obj[name]);
+console.log(obj.name);
+
+object.key = newvalue;//to update and add the key value pair
+
+
+```
+
+### Note:-  
+object does not follow specific order  
+we can change the properties of the object  
+
+when be using the variable that store the key then we not access the obj values by this way "obj.name"  
+so, we have to use this way to "obj[name]"  
+
+### Math object(inbuilt)  
+Math.PI-->value of py  
+Math.abe-->always gives +ive  
+Math.pow(2 , 4) 
+Math.floor(num)-->round off always give the value <=num  
+Math.random()-->gvies the random values in the range **0<=val<1**
 ---
+
+### note:-  
+how to generate the random number between a give range  
+** Math.floor(Math.random()*endPoint) +1 **-->to sure generated start from one
+for case of range value other than One  
+**Math.floor(Math.random()*end-start) + start**
+
+
+## Memory allocation in javaScript-  
+primitive data stores in **stack** and non-primitive data stores in **heap**  
+and vales stored in heap will always give the reference to the variable but in case of **stack** it gives the copy of the data to the variable.  
+
+
+
+
+
+
+
+### dates in javaScript:-  
+
+```javascript
+let myData = new Date();
+mydate.toDateString();// give the  day , date with year
+mydate.toLocalString();// give date- 00/00/0000 with time
+//date is a object type
+
+//month start form Zero in javscript
+
+//we can also pass the args to get the specific time and year
+
+
+```
+--
 
 
 ## API fetching
