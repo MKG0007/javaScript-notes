@@ -137,7 +137,20 @@ and vales stored in heap will always give the reference to the variable but in c
 
 
 
+### symbol in object:-  
+```javascript
+//symbole creation
+let mysm = symbol("hello sm");
 
+// to use in side the object there is a syntax we have to follow
+myobj = {
+
+        name: "mayank",
+        age: 20,
+        [mysm] : "object symbol"
+}
+
+```
 
 
 
