@@ -115,6 +115,17 @@ we can change the properties of the object
 
 when be using the variable that store the key then we not access the obj values by this way "obj.name"  
 so, we have to use this way to "obj[name]"  
+if you don't want to use the "obj.props" again and again for accessing the value then use 
+
+this method :-  
+```javascript
+const {propertyName : anyName} = course(object name;
+//now we cna use the object value without using the "." method .
+
+console.log(anyName);
+
+```
+
 
 ### Math object(inbuilt)  
 Math.PI-->value of py  
@@ -168,6 +179,57 @@ mydate.toLocalString();// give date- 00/00/0000 with time
 
 
 ```
+
+## function in javaScript
+ there are many ways of defining function javascript  
+ ```javascript
+ //1)normal method-->
+ function Name(args if you want to give any){
+         //function code
+ }
+
+//2)function stored in the variable-->
+const name = function(args if you had any){
+        //function code
+}
+
+//3)arrow function -->
+const name = ()=>{
+
+        //function code
+}
+//this fuction gives some sortcuts in writing the function
+
+//special function --->(Immediately Invoked Function Expressions)
+(function chai(){
+        console.log('mayank gupta');
+})();
+//--->used to void the pollution from the global scope(values and variables declaration) 
+//-->semi colon must be add after the function end in case of this function
+```
+
+### node:-  
+in case of normal function after declaration we can call it from any where even before its declaration code but with in the scope  
+but in case of varable function we can not call it before the function declaration code  
+
+
+## JavaScript Execution Context:-
+1)Global Exicution context()-->created by browser and js environment
+2)Function Exicution context()-->of the function 
+3)Eval Execution contexr
+
+### working:-
+[]("")
+global exicution context is created  
+after that --->**memory phase**(for memory allocation fo the variable by usigning the value zero)  
+and then --->**exicution phase**(for code execution)---->and if there is any function call --->sparate environment will be created called **new exicutional context**(new variable environment + execution thread)-->after exicution it will get deleted  
+
+
+
+
+
+
+
 --
 
 
