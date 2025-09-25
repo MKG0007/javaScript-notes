@@ -126,6 +126,88 @@ console.log(anyName);
 
 ```
 
+# JavaScript DOM (Document Object Model) Revision
+
+## Element Selection
+
+1. **`getElementById`** – Returns a single element by its ID.  
+2. **`getElementsByTagName`** – Returns multiple elements as an **HTMLCollection**.  
+3. **`getElementsByClassName`** – Returns multiple elements as an **HTMLCollection**.  
+4. **`querySelector`** – Returns the first matching element.  
+5. **`querySelectorAll`** – Returns multiple elements as a **NodeList**.  
+
+### Differences
+
+| Feature           | HTMLCollection                  | NodeList                           |
+|------------------|--------------------------------|-----------------------------------|
+| Auto-update       | ✅ Updates automatically        | ❌ Does not auto-update            |
+| Iteration support | ❌ Limited support               | ✅ Supports `forEach()` in modern browsers |
+
+---
+
+## Document Components
+
+- **`innerText`** – Returns the text as shown to the user.  
+- **`textContent`** – Returns full text including hidden text.  
+- **`innerHTML`** – Returns full HTML markup including tags.  
+
+---
+
+## Attribute Manipulation
+
+- **`getAttribute(attributeName)`** – Gets the value of a specific attribute.  
+- **`setAttribute(attributeName, value)`** – Sets or overwrites the attribute value.  
+
+---
+
+## Style Manipulation
+
+- Using `style` directly only works on **inline CSS**.  
+- Prefer using **`classList`** for adding/removing classes.
+
+### `classList` Methods
+
+- **`element.classList`** – Returns a list of all classes.  
+- **`.add(className)`** – Adds a class.  
+- **`.remove(className)`** – Removes a class.  
+- **`.contains(className)`** – Checks if a class exists.  
+- **`.toggle(className)`** – Adds class if missing, removes if present.  
+- **`.replace(oldClass, newClass)`** – Replaces a class.  
+
+---
+
+## Navigation Properties
+
+- **`parentElement`** – Gets the parent of the selected element.  
+- **`children`** – Gets all child elements.  
+- **`previousElementSibling`** – Gets the previous sibling element.  
+- **`nextElementSibling`** – Gets the next sibling element.  
+
+---
+
+## Element Creation and Addition
+
+### Creating Elements
+
+- **`document.createElement(tagName)`** – Creates a new element.
+
+### Adding Elements
+
+- **`appendChild(node)`** – Adds a node at the **end** of the selected element (only nodes).  
+- **`prepend(nodeOrText)`** – Adds a node or text at the **start**.  
+- **`append(nodeOrText, ...)`** – Adds multiple nodes or text at the **end**.  
+
+### Insert at Specific Location
+
+- **`element.insertAdjacentHTML(position, html)`** or **`insertAdjacentElement`**  
+Positions relative to the selected element:  
+1. **`beforebegin`** – Before the element itself.  
+2. **`afterbegin`** – Inside, before the first child.  
+3. **`beforeend`** – Inside, after the last child.  
+4. **`afterend`** – After the element itself.  
+
+
+
 
 ### Math object(inbuilt)  
 Math.PI-->value of py  
