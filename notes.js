@@ -319,12 +319,36 @@ sort(accepts function(){
 - we must provide the function if trying we trying to sort the numeric array
 
 
+String in javaScript-->
+- A string in JavaScript is a primitive data type used to represent textual data.
+- string is immutable in javaScript
+let name = "mayank";
+name.length //gives the length of the string
+- all methods return a new string(modified version of the old string)
+name.toUpperCase() // convert lowerCase char to upperCase
+name.toLowerCase() // opposite
+name.trim() //remove the extra spaces from the start and end
+name.trimStart() //remove the spaces from the start only
+name.trimEnd() //remove the spaces from the end only
+name.substring(start , end) // return the substring
+name.slice(start , end) //same but also accept negative index
+name.replace("str" , "new str")// replace the first occurance only
+name.replaceAll("str" , "new str")// replace all occurance
+name.split("") //give the array ele according to the speration
+
+
+reversing the string:
+let s = "abc";
+let rev = s.split("").reverse().join("");
+
+
+
 
 important array methods:-
 
 forEach(function(){})
 - it is use to perform task by using all the array element one by one
-- but does not return anyting
+- but does not return anything
 - arr.forEach(()=>{})
 
 
@@ -622,6 +646,9 @@ event bubbling:
 - when the some event occur on the element and there is no event handler added for it then it will try to find it on node's parent node and goes on.
 
 how to stop event bubbling:
+e.stopPropagation() //Stops the event from moving to parent elements.
+e.stopImmediatePropagation() //it stops bubbling and other events on the same element
+
 
 
 event capturing:
