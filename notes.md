@@ -4,7 +4,7 @@
 
 **High level language**(no manual memory management , easy syntax)  
 **Interpreted language**(line by line execution)  
-**dynamically typed**(type checking happens in runtime)
+**dynamically typed**(type checking happens in runtime)  
 **Single threaded**(execute one task at a time)
 
 
