@@ -1,4 +1,13 @@
 # <--JavaScript Notes-->
+- JavaScript (JS) is a high-level, interpreted, dynamically typed, single-threaded programming language used primarily to create interactive and dynamic behavior in web applications.
+- It runs inside the browser as well as outside the browser (Node.js) and follows the event-driven, non-blocking execution model.
+
+**High level language**(no manual memory management , easy syntax)  
+**Interpreted language**(line by line execution)  
+**dynamically typed**(type checking happens in runtime)
+**Single threaded**(execute one task at a time)
+
+
 ### basic terms:  
 - **words**(that does not have any pre-defined meaning in the programming language)
 - **keywords**(that have pre-defined maning in the programming language and contains specific properties)
